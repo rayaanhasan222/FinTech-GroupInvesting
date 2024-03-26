@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020807699216",
+    "project_id": "hedgefun-3de39",
+    "storage_bucket": "hedgefun-3de39.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020807699216:android:902badd9cf133e960f6395",
+        "android_client_info": {
+          "package_name": "com.hedgefun"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACP24K8yZycbMf5dCqiPIIBUdijVEoBEA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
