@@ -1,117 +1,94 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeScreen from "./front-end/Components/HomeScreen.tsx";
+import PortfolioScreen from "./front-end/Components/PortfolioScreen.tsx";
+import { enableScreens } from 'react-native-screens';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+enableScreens();
+const Tab = createBottomTabNavigator();
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
+    <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
 
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+        <Text style={styles.welcomeMessage}>Welcome back, User!</Text>
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+        {/* Portfolio Card */}
+        <View style={styles.card}>
+          <Text style={styles.cardTitle}>Your portfolio</Text>
+          {/* Portfolio stuff here */}
+        </View>
 
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+        {/* Stocks Section */}
+        <View style={styles.stocksSection}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="Search"
+            // Add onChangeText event to handle search functionality
+          />
+          {/* Stocks stuff here */}
         </View>
       </ScrollView>
+
+      <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Portfolio" component={PortfolioScreen} />
+      </Tab.Navigator>
+    </NavigationContainer>
+
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  screenContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  container: {
+    flex: 1,
   },
-  sectionDescription: {
-    marginTop: 8,
+  scrollView: {
+    backgroundColor: 'white',
+  },
+  welcomeMessage: {
+    margin: 20,
+    fontSize: 22,
+    fontWeight: 'bold',
+  },
+  card: {
+    backgroundColor: '#EDE7F6',
+    borderRadius: 8,
+    padding: 20,
+    margin: 20,
+  },
+  cardTitle: {
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: 'bold',
   },
-  highlight: {
-    fontWeight: '700',
+  stocksSection: {
+    padding: 20,
+  },
+  searchInput: {
+    backgroundColor: '#F5F5F5',
+    borderRadius: 8,
+    padding: 15,
+    fontSize: 16,
+    marginBottom: 20,
+  },
+  bottomNav: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#9C27B0',
+    paddingVertical: 10,
+  },
+  navItem: {
+    alignItems: 'center',
   },
 });
 
