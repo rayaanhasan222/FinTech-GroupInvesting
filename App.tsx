@@ -2,8 +2,8 @@ import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from "./front-end/Components/HomeScreen.tsx";
-import PortfolioScreen from "./front-end/Components/PortfolioScreen.tsx";
+import HomeScreen from "./front-end/Pages/HomeScreen.tsx";
+import PortfolioScreen from "./front-end/Pages/PortfolioScreen.tsx";
 import { enableScreens } from 'react-native-screens';
 
 enableScreens();
