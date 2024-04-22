@@ -41,11 +41,11 @@ const BottomTabNavigator = () => {
         tabBarShowLabel: false,
       })}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Leaderboard" component={LeaderboardScreen} />
-      <Tab.Screen name="Trade" component={TradeSectionScreen} />
-      <Tab.Screen name="Forum" component={ForumPageScreen} />
-      <Tab.Screen name="Portfolio" component={PersonalPortfolioScreen} />
+      <Tab.Screen name="Home" component={HomeScreen} options={{ headerShown: false }}/>
+      <Tab.Screen name="Leaderboard" component={LeaderboardScreen} options={{ headerShown: false }}/>
+      <Tab.Screen name="Trade" component={TradeSectionScreen} options={{ headerShown: false }}/>
+      <Tab.Screen name="Forum" component={ForumPageScreen} options={{ headerShown: false }}/>
+      <Tab.Screen name="Portfolio" component={PersonalPortfolioScreen} options={{ headerShown: false }}/>
     </Tab.Navigator>
   );
 };
