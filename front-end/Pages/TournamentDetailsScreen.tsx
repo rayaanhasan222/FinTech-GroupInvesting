@@ -85,6 +85,7 @@ const TournamentDetailsScreen = () => {
         <Image
           source={require('./graph.png')}
           style={{width: '100%', height: '100%', justifyContent: 'center'}}
+          alt='Your portfolio chart'
         />
       </Center>
       <VStack flex={1} width="100%">
