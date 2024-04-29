@@ -1,41 +1,62 @@
-import React from 'react';
+import {React, useRef} from 'react';
 import {VStack, Input, IconButton, Box, FlatList, Text} from 'native-base';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useTheme} from 'native-base';
-import { NativeBaseProvider } from 'native-base';
-import { NavigationContainer } from '@react-navigation/native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
-
+import {NativeBaseProvider} from 'native-base';
+import {NavigationContainer} from '@react-navigation/native';
+import {TextInput, TouchableOpacity} from 'react-native-gesture-handler';
 
 const ThreadListScreen = ({navigation}) => {
   const theme = useTheme();
   const gray400 = theme.colors.gray[400];
 
   type threadsEntry = {
-    id: string;
+    id: number;
     title: string;
     description: string;
     replies: string[];
   };
 
-  const threads = [
-    {id: '1', title: 'Thread 1', description: 'Description 1', replies: ["Rohit", "Aiden"]},
-    {id: '2', title: 'Thread 2', description: 'Description 2', replies: []},
-    {id: '3', title: 'Thread 3', description: 'Description 3', replies: []},
+  let threads = [
+    {
+      id: 1,
+      title: 'Thread 1',
+      description: 'Description 1',
+      replies: ['Rohit', 'Aiden'],
+    },
+    {id: 2, title: 'Thread 2', description: 'Description 2', replies: []},
+    {id: 3, title: 'Thread 3', description: 'Description 3', replies: []},
   ];
 
-  const handleThreadClick = (item) => {
-    navigation.navigate('ThreadDetails', {item})
-  }
+  const handleThreadClick = item => {
+    navigation.navigate('ThreadDetails', {item});
+  };
+
+  // function newThread() {
+  //   let thread: threadsEntry = {
+  //     id: threads[(threads.length - 1)].id + 1,
+  //     title: 'Thread ' + (threads[(threads.length - 1)].id + 1).toString(),
+  //     description: 'Description ' + (threads[(threads.length - 1)].id + 1).toString()},
+  //     replies: []
+  //   };
+  //   threads = threads + threads;
+  //   return;
+  // };
 
   const renderItem = ({item}: {item: threadsEntry}) => (
     <TouchableOpacity onPress={() => handleThreadClick(item)}>
-      <Box borderWidth={1} borderColor="gray.300" p={5} my={2} borderRadius="md">
+      <Box
+        borderWidth={1}
+        borderColor="gray.300"
+        p={5}
+        my={2}
+        borderRadius="md">
         <Text color="gray.800">{item.title}</Text>
         <Text fontSize={11}>{item.description}</Text>
       </Box>
     </TouchableOpacity>
   );
+
 
   return (
     // <NativeBaseProvider>
@@ -61,7 +82,7 @@ const ThreadListScreen = ({navigation}) => {
           bg: 'violet.600:alpha.20',
         }}
         bg="violet.500"
-        onPress={() => console.log('Ask a question')}
+        onPress={() => console.log("New Thread")}
       />
 
       <FlatList
