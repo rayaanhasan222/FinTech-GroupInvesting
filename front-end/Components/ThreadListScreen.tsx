@@ -20,13 +20,60 @@ const ThreadListScreen = ({navigation}) => {
   let threads = [
     {
       id: 1,
-      title: 'Thread 1',
-      description: 'Description 1',
-      replies: ['Rohit', 'Aiden'],
+      title: 'Stock Market Trends 2024',
+      description: 'Discuss the latest trends affecting the markets this year.',
+      replies: ['Alice', 'Bob'],
     },
-    {id: 2, title: 'Thread 2', description: 'Description 2', replies: []},
-    {id: 3, title: 'Thread 3', description: 'Description 3', replies: []},
+    {
+      id: 2,
+      title: 'Cryptocurrency Regulations Update',
+      description: 'What the new regulations mean for crypto traders.',
+      replies: ['Charlie'],
+    },
+    {
+      id: 3,
+      title: 'Real Estate Investment Strategies',
+      description: 'Strategies for the current real estate market.',
+      replies: ['Dave'],
+    },
+    {
+      id: 4,
+      title: 'Global Economic Outlook',
+      description: 'Projections and discussions on the global economy.',
+      replies: [],
+    },
+    {
+      id: 5,
+      title: 'Tech IPOs to Watch in 2024',
+      description: 'Upcoming tech IPOs that have investors talking.',
+      replies: ['Eve', 'Frank'],
+    },
+    {
+      id: 6,
+      title: 'Hedge Fund Insights',
+      description: 'Inside look at hedge fund strategies for Q2.',
+      replies: ['Grace'],
+    },
+    {
+      id: 7,
+      title: 'Commodities Forecast Q2',
+      description: 'Predictions for commodity prices this quarter.',
+      replies: [],
+    },
+    {
+      id: 8,
+      title: 'Tax Planning for Investors',
+      description: 'Optimizing your investments for tax season.',
+      replies: ['Henry'],
+    },
+    {
+      id: 9,
+      title: 'Venture Capital in Biotech',
+      description: 'The impact of VC funding on biotech startups.',
+      replies: ['Ivy'],
+    },
   ];
+  
 
   const handleThreadClick = item => {
     navigation.navigate('ThreadDetails', {item});

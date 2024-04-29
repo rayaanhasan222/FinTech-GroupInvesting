@@ -5,12 +5,12 @@ const HomeScreen = () => {
 
   // Dummy stock data with an additional 'trend' field
   const stockData = [
-    { id: '1', name: 'AAPL', shares: 15, shareValue: 145, trend: 'up' },
-    { id: '2', name: 'GOOGL', shares: 5, shareValue: 2800, trend: 'down' },
-    { id: '3', name: 'AMZN', shares: 2, shareValue: 3300, trend: 'up' },
-    { id: '4', name: 'MSFT', shares: 10, shareValue: 290, trend: 'up' },
-    { id: '5', name: 'TSLA', shares: 8, shareValue: 720, trend: 'down' },
-    { id: '6', name: 'META', shares: 20, shareValue: 200, trend: 'up' },
+    { id: '1', name: 'AAPL', shares: 15, shareValue: 169.30, trend: 'up' },
+    { id: '2', name: 'GOOGL', shares: 5, shareValue: 173.69, trend: 'down' },
+    { id: '3', name: 'AMZN', shares: 2, shareValue: 179.62, trend: 'up' },
+    { id: '4', name: 'MSFT', shares: 10, shareValue: 406.32, trend: 'up' },
+    { id: '5', name: 'TSLA', shares: 8, shareValue: 168.29, trend: 'down' },
+    { id: '6', name: 'META', shares: 20, shareValue: 443.29, trend: 'up' },
   ];
 
   // Function to calculate the total value of shares
